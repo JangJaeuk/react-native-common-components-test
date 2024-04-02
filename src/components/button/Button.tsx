@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { type FC } from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
 
 const styles = StyleSheet.create({
