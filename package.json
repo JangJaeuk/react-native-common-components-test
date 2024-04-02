@@ -41,14 +41,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://www.test.com.git"
+    "url": "https://github.com/JangJaeuk/react-native-common-components-test"
   },
-  "author": "test <test@test.com> (https://www.test.com)",
+  "author": "JangJaeuk <https://github.com/JangJaeuk/react-native-common-components-test> (https://github.com/JangJaeuk/react-native-common-components-test)",
   "license": "MIT",
   "bugs": {
-    "url": "https://www.test.com/issues"
+    "url": "https://github.com/JangJaeuk/react-native-common-components-test/issues"
   },
-  "homepage": "https://www.test.com#readme",
+  "homepage": "https://github.com/JangJaeuk/react-native-common-components-test#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
