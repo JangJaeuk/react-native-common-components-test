@@ -1,12 +1,32 @@
 import * as React from 'react';
 
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-common-components-test';
+import { useState } from 'react';
 
 export default function App() {
+  const [num, setNum] = useState(0);
+
+  const onPressUpButton = () => {
+    setNum((prevNum) => prevNum + 1);
+  };
+
+  const onPressDownButton = () => {
+    setNum((prevNum) => prevNum - 1);
+  };
+
   return (
     <View style={styles.container}>
-      <Button title={'버튼'} />
+      <View style={styles.buttonContainer}>
+        <Button block title={'업'} size={'medium'} onPress={onPressUpButton} />
+        <Button
+          block
+          title={'다운'}
+          size={'medium'}
+          onPress={onPressDownButton}
+        />
+      </View>
+      <Text style={styles.number}>{num}</Text>
     </View>
   );
 }
@@ -17,9 +37,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  buttonContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    paddingHorizontal: 16,
+    gap: 6,
+  },
+  number: {
+    marginTop: 30,
   },
 });

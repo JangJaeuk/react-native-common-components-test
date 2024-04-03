@@ -5,19 +5,16 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 16,
     borderRadius: 10,
     backgroundColor: '#eee',
   },
   text: {
-    fontSize: 14,
     fontWeight: '500',
-    lineHeight: 18,
+    color: '#0d0d0d',
   },
 });
 
-type Size = 'large' | 'small';
+type Size = 'large' | 'medium' | 'small';
 
 type Props = Omit<
   React.ComponentProps<typeof Pressable>,
@@ -25,20 +22,39 @@ type Props = Omit<
 > & {
   title: string;
   size?: Size;
+  block?: boolean;
 };
 
 export const Button: FC<Props> = (props) => {
-  const { title, size = 'small', disabled } = props;
+  const {
+    title,
+    size = 'medium',
+    block = false,
+    disabled,
+    ...restProps
+  } = props;
 
   return (
     <Pressable
+      {...restProps}
       style={{
         ...styles.container,
-        width: size === 'large' ? '100%' : 'auto',
+        flex: block ? 1 : undefined,
         opacity: disabled ? 0.4 : 1,
+        paddingHorizontal: size === 'large' ? 36 : size === 'medium' ? 24 : 16,
+        paddingVertical: size === 'large' ? 14 : size === 'medium' ? 10 : 8,
       }}
     >
-      <Text>{title}</Text>
+      <Text
+        style={{
+          ...styles.text,
+          fontSize: size === 'large' ? 16 : size === 'medium' ? 14 : 12,
+          lineHeight: size === 'large' ? 20 : size === 'medium' ? 18 : 15,
+          fontWeight: size === 'large' ? '700' : '500',
+        }}
+      >
+        {title}
+      </Text>
     </Pressable>
   );
 };
