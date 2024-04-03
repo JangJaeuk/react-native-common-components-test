@@ -8,10 +8,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#eee',
   },
-  text: {
-    fontWeight: '500',
-    color: '#0d0d0d',
-  },
 });
 
 type Size = 'large' | 'medium' | 'small';
@@ -40,17 +36,17 @@ export const Button: FC<Props> = (props) => {
       style={{
         ...styles.container,
         flex: block ? 1 : undefined,
-        opacity: disabled ? 0.4 : 1,
         paddingHorizontal: size === 'large' ? 36 : size === 'medium' ? 24 : 16,
         paddingVertical: size === 'large' ? 14 : size === 'medium' ? 10 : 8,
+        backgroundColor: disabled ? '#f3f4f9' : '#6e57fa',
       }}
     >
       <Text
         style={{
-          ...styles.text,
           fontSize: size === 'large' ? 16 : size === 'medium' ? 14 : 12,
           lineHeight: size === 'large' ? 20 : size === 'medium' ? 18 : 15,
           fontWeight: size === 'large' ? '700' : '500',
+          color: disabled ? '#aeb1ba' : '#fff',
         }}
       >
         {title}
