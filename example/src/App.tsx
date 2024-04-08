@@ -18,9 +18,15 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
-        <Button block title={'업'} size={'medium'} onPress={onPressUpButton} />
         <Button
-          block
+          wide
+          type={'outline'}
+          title={'업'}
+          size={'medium'}
+          onPress={onPressUpButton}
+        />
+        <Button
+          wide
           title={'다운'}
           size={'medium'}
           onPress={onPressDownButton}
