@@ -1,6 +1,6 @@
 import styles from './Button.style';
 import React, { type FC } from 'react';
-import { Pressable, PressableProps, Text } from 'react-native';
+import { type PressableProps, Pressable, Text } from 'react-native';
 
 type Props = Omit<PressableProps, 'style' | 'children'> & {
   title: string;
@@ -36,7 +36,7 @@ export const Button: FC<Props> = (props) => {
       <Text
         style={[
           styles.text,
-          styles[`test_${size}`],
+          styles[`text_${size}`],
           type === 'outline'
             ? styles.text_outline_color
             : styles.text_general_color,
